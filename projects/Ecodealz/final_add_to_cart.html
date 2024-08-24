@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="cart.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo" style="display: flex; justify-content: center;">
+                <img src="Logo.png" alt="logo" style="height: 60%; width: 60%; ">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>Dashboard</li>
+                    <li>Shop</li>
+                    <li>New Arrivals</li>
+                    <li>Popular Brand</li>
+                    <li>Order</li>
+                </ul>
+            </div>
+            <div class="tools">
+                <ul>
+                    <li>Second-Hand Clothes</li>
+                    <li>Price</li>
+                    <li>About</li>
+                    <li>Add To Card</li>
+                    <li>Log Out</li>
+                </ul>
+            </div>
+            <div class="support">
+                <p>Customer Support</p>
+                <p>Email: support@ecocalz.com</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <input type="text" placeholder="Search...">
+                <div class="user-info">
+                    <span>Rani Kumari</span>
+                    <img src="photo1.jpg" alt="User Icon">
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="carousel-container">
+                    <div class="carousel-thumbnails">
+                        <img src="photo1.jpg" alt="Image 1 Thumbnail" class="thumbnail">
+                        <img src="photo1.jpg" alt="Image 2 Thumbnail" class="thumbnail">
+                        <img src="photo1.jpg" alt="Image 3 Thumbnail" class="thumbnail">
+                    </div>
+                    <div class="carousel">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide"><img src="photo1.jpg" alt="Image 1"></div>
+                            <div class="carousel-slide"><img src="photo1.jpg" alt="Image 2"></div>
+                            <div class="carousel-slide"><img src="photo1.jpg" alt="Image 3"></div>
+                        </div>
+                        <button class="carousel-button prev"></button>
+                        <button class="carousel-button next"></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h2>Women's Olive Trench Coat Long</h2>
+                    <p class="price">-55% <span>₹749</span> <br> <p style="color: #999;">MRP <span style="text-decoration: line-through;">₹1499</span></p></p>
+                   
+                    <div class="color">
+                        <label>Color</label><br>
+                        <label class="custom-radio olive">
+                            <input type="radio" name="color" value="olive">
+                            <span class="radio-label"></span>
+                        </label>
+                        <label class="custom-radio navy">
+                            <input type="radio" name="color" value="navy">
+                            <span class="radio-label"></span>
+                        </label>
+                        <label class="custom-radio blue">
+                            <input type="radio" name="color" value="blue">
+                            <span class="radio-label"></span>
+                        </label>
+                    </div>
+                    <form>
+                        <label class="custom-box">
+                            <input type="radio" name="size" value="S">
+                            <span class="box">S</span>
+                        </label>
+                        <label class="custom-box">
+                            <input type="radio" name="size" value="M">
+                            <span class="box">M</span>
+                        </label>
+                        <label class="custom-box">
+                            <input type="radio" name="size" value="L">
+                            <span class="box">L</span>
+                        </label>
+                        <label class="custom-box">
+                            <input type="radio" name="size" value="XL">
+                            <span class="box">XL</span>
+                        </label>
+                    </form>
+                    <button class="add-to-cart" style="width: 70%; justify-content: center;"><i class="fa fa-cart-plus" aria-hidden="true"></i>Add to cart</button>
+                    <button class="add-to-favorites"><i class="far fa-heart"></i></button>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis a minus eos iusto sunt similique pariatur nam velit voluptatibus? Corrupti molestiae iusto ea consectetur ipsam unde laborum numquam dicta libero laboriosam eveniet repellat explicabo, eaque porro nihil quia adipisci deleniti ipsum voluptate dolore doloribus ipsa beatae sit praesentium. Earum, error.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelector('.carousel-slides');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const slideWidth = document.querySelector('.carousel-slide').offsetWidth;
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        let currentIndex = 0;
+
+        function updateSlide(index) {
+            slides.style.transform = `translateX(-${index * slideWidth}px)`;
+            document.querySelector('.thumbnail.active').classList.remove('active');
+            thumbnails[index].classList.add('active');
+        }
+
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlide(index);
+            });
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : thumbnails.length - 1;
+            updateSlide(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < thumbnails.length - 1) ? currentIndex + 1 : 0;
+            updateSlide(currentIndex);
+        });
+
+        thumbnails[0].classList.add('active');
+    });
+    
+</script>
+</html>

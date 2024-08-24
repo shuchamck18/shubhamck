@@ -1,0 +1,20 @@
+/* Custom CSS for medium-sized project section */
+#projects {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project {
+  text-align: center;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px; /* Limiting maximum height for vertical images */
+  width: auto; /* Ensuring images maintain aspect ratio */
+}
+
+.carousel-control {
+  width: 5%;
+}

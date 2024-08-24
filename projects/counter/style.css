@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.counter{
+    height: 70vh;
+    width: 70vw;
+    margin: auto;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.box1 textarea{
+    border: none;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+     padding: 10px;
+}
+.box1 textarea:focus{
+   outline: none;
+}
+
+.box2{
+    height: 100%;
+    width: 1005;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+     padding: 20px;
+     font-size: 24px;
+
+ 
+
+
+}
+.b2{
+    display: flex;
+    justify-content: space-between;
+     padding-bottom: 40px;
+}

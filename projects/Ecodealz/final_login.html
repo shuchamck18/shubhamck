@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            display: flex;
+            width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-section {
+            flex: 1;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: auto;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .logo span {
+            color: #ff0066;
+        }
+
+        h2 {
+            margin: 20px 0 10px;
+            font-size: 24px;
+            color: #ff0066;
+        }
+
+        .wave {
+            animation: wave 1.2s infinite;
+            display: inline-block;
+            transform-origin: 70% 70%;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(14deg); }
+            50% { transform: rotate(-8deg); }
+            75% { transform: rotate(14deg); }
+        }
+
+        p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1.5px solid #ddd;  
+            border-radius: 4px;
+            outline: none;  
+        }
+
+        .input-group input:focus,
+        .input-group input:valid {
+            border: 1.5px solid #ff0066;  
+        }
+
+
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group .remember-me {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group .remember-me input {
+            display: none;
+        }
+
+        .checkbox-group .remember-me input + label::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+            background-color: white;
+        }
+
+        .checkbox-group .remember-me input:checked + label::before {
+            background-color: #ff0066;
+            border-color: #ff0066;
+        }
+
+        .checkbox-group .remember-me input + label {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .checkbox-group .remember-me input:checked + label::after {
+            content: '\2713';
+            color: white;
+            position: absolute;
+            left: 4px;
+            top: 0px;
+            font-size: 18px;
+        }
+
+        .checkbox-group .forgot-password {
+            color: #ff0066;
+            text-decoration: none;
+        }
+
+        .checkbox-group .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0066;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e6005c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="Login image.png" alt="Fashion Model">
+        </div>
+        <div class="form-section">
+            <h2>Welcome <span class="wave">👋</span></h2>
+            <p>Please login here</p>
+            <form>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="robertfox@example.com" required>
+                </div><br>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="checkbox-group">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                        <label for="remember-me">Remember Me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
